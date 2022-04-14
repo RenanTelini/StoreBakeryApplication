@@ -36,11 +36,19 @@ public class Order implements Serializable {
 	public Order() {
 	}
 
+<<<<<<< HEAD
 	public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
 		super();
 		this.id = id;
 		this.moment = moment;
 		setOrderStatus(orderStatus);
+=======
+	public Order(Long id, Instant moment, OrderStatus orderStatus ,User client) {
+		super();
+		this.id = id;
+		this.moment = moment;
+		setOrderStatus(orderStatus); // mudanças feitas aqui
+>>>>>>> de482b675e3f9f4c309c4011a514a3624a946349
 		this.client = client;
 	}
 
@@ -60,20 +68,28 @@ public class Order implements Serializable {
 		this.moment = moment;
 	}
 
+<<<<<<< HEAD
+=======
+	
+>>>>>>> de482b675e3f9f4c309c4011a514a3624a946349
 	public OrderStatus getOrderStatus() {
 		return OrderStatus.valueOf(orderStatus);
 	}
 
 	public void setOrderStatus(OrderStatus orderStatus) {
 		if(orderStatus != null) {
+<<<<<<< HEAD
 			this.orderStatus = orderStatus.getCode();
+=======
+			this.orderStatus = orderStatus.getCode();						
+>>>>>>> de482b675e3f9f4c309c4011a514a3624a946349
 		}
 	}
 
 	public User getClient() {
 		return client;
 	}
-
+	
 	public void setClient(User client) {
 		this.client = client;
 	}
