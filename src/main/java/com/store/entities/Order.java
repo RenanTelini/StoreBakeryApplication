@@ -13,10 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-<<<<<<< HEAD
 import com.store.entities.enums.OrderStatus;
-=======
->>>>>>> 75258c1507d8b72296d2f8104c100725660913a2
 
 @Entity
 @Table(name = "tb_order")
@@ -30,11 +27,8 @@ public class Order implements Serializable {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant moment;
 
-<<<<<<< HEAD
 	private Integer orderStatus;
 
-=======
->>>>>>> 75258c1507d8b72296d2f8104c100725660913a2
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
 	private User client;
