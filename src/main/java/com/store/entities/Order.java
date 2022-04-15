@@ -2,7 +2,9 @@ package com.store.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -33,10 +36,13 @@ public class Order implements Serializable {
 	@JoinColumn(name = "cliente_id")
 	private User client;
 
+	@OneToMany(mappedBy = "id.order")
+	private Set<OrderItem> items = new HashSet<>();
+
 	public Order() {
 	}
 
-	public Order(Long id, Instant moment, OrderStatus orderStatus ,User client) {
+	public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
 		super();
 		this.id = id;
 		this.moment = moment;
@@ -65,15 +71,15 @@ public class Order implements Serializable {
 	}
 
 	public void setOrderStatus(OrderStatus orderStatus) {
-		if(orderStatus != null) {
-			this.orderStatus = orderStatus.getCode(); // mudanças feitas aqui									
+		if (orderStatus != null) {
+			this.orderStatus = orderStatus.getCode(); // mudanças feitas aqui
 		}
 	}
 
 	public User getClient() {
 		return client;
 	}
-	
+
 	public void setClient(User client) {
 		this.client = client;
 	}
@@ -81,6 +87,10 @@ public class Order implements Serializable {
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
+	}
+
+	public Set<OrderItem> getItems() {
+		return items;
 	}
 
 	@Override
