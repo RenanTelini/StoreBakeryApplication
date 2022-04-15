@@ -31,6 +31,7 @@ public class Product implements Serializable {
 	public Product() {
 	}
 
+	// Constructor
 	public Product(Long id, String name, String description, Double price, String imgUrl) {
 		super();
 		this.id = id;
