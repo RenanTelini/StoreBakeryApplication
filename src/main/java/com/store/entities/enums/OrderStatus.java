@@ -1,9 +1,15 @@
 package com.store.entities.enums;
 
 public enum OrderStatus {
+<<<<<<< HEAD
+	
+	WAITING_PAYMENT(8),
+	PAID(9),
+=======
 
 	WAITING_PAYMENT(1),
 	PAID(2),
+>>>>>>> de482b675e3f9f4c309c4011a514a3624a946349
 	SHIPPED(3),
 	DELIVERED(4),
 	CANCELED(5);
@@ -26,4 +32,8 @@ public enum OrderStatus {
 		}
 		throw new IllegalArgumentException("Invalid OrderStatus code");
 	}
+<<<<<<< HEAD
+	
+=======
+>>>>>>> de482b675e3f9f4c309c4011a514a3624a946349
 }
