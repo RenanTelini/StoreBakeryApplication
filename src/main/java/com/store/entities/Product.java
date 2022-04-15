@@ -15,8 +15,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.aspectj.weaver.ast.Or;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
