@@ -28,6 +28,7 @@ public class Product implements Serializable {
 	@Transient
 	private Set<Category> categories = new HashSet<>();
 	
+	// Empty Constructor
 	public Product() {
 	}
 
